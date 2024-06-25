@@ -1,8 +1,9 @@
 import { ChangeEvent, useState } from "react";
 import { City } from "../../types/city";
 import { TYPED_CITIES } from "../../utils/constants";
+import { CitySearchProps } from "./types";
 
-function CitySearch() {
+function CitySearch({ cityOnClick }: CitySearchProps) {
   const [query, setQuery] = useState('');
   const [filteredCities, setFilteredCities] = useState<City[]>([]);
 
@@ -20,6 +21,12 @@ function CitySearch() {
     }
   };
 
+  const handleSelectCity = (cityId: number) => {
+    cityOnClick(cityId);
+    setQuery('');
+    setFilteredCities([]);
+  };
+
   return (
     <div>
       <input 
@@ -31,7 +38,7 @@ function CitySearch() {
       <ul>
         {
           filteredCities.map((city, index) => (
-            <li key={index}>{city.name}, {city.country}</li>
+            <li key={index} onClick={() => handleSelectCity(city.id)}>{city.name}, {city.country}</li>
           ))
         }
       </ul>

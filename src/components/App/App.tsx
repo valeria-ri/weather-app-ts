@@ -21,9 +21,13 @@ function App() {
       .catch(console.error);
   }, [city]);
 
+  const requestCity = (id: number) => setCity(id);
+
   return (
     <div className="App">
-      <Header />
+      <Header 
+        cityOnClick={requestCity}
+      />
       {
         weather && (
           <>

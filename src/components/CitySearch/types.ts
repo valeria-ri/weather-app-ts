@@ -1,3 +1,3 @@
-export type HeaderProps = {
+export type CitySearchProps = {
   cityOnClick: (id: number) => void,
 }

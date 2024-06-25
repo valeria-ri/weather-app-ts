@@ -1,11 +1,11 @@
-import CitySearch from "../Search/Search";
+import CitySearch from "../CitySearch/CitySearch";
 import { HeaderProps } from "./types";
 
-function Header({ onChange }: HeaderProps) {
+function Header({ cityOnClick }: HeaderProps) {
   return (
     <header>
       <p>Weather Now</p>
-      <CitySearch />
+      <CitySearch cityOnClick={cityOnClick} />
     </header>
   )
 }
