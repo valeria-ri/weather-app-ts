@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { API_KEY, DEFAULT_CITY, MAIN_URL } from '../../utils/constants';
+import { API_KEY, DEFAULT_CITY_ID, MAIN_URL } from '../../utils/constants';
 import { weatherFormat } from '../../utils/utils';
 import { FormattedWeatherData } from '../../types/weatherData';
+import Header from '../Header/Header';
 
 function App() {
-  const [city, setCity] = useState(DEFAULT_CITY);
+  const [city, setCity] = useState(DEFAULT_CITY_ID);
   const [weather, setWeather] = useState<FormattedWeatherData | null>(null);
 
-  const weatherApiUrl = `${MAIN_URL}weather?q=${city}&appid=${API_KEY}&units=metric&lang=ru`;
+  const weatherApiUrl = `${MAIN_URL}weather?id=${city}&appid=${API_KEY}&units=metric&lang=en`;
 
   useEffect(() => {
     fetch(weatherApiUrl)
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       {
         weather && (
           <>
