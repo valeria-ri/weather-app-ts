@@ -1,4 +1,4 @@
-import cities from "../data/city.list.json";
+import cities from "../data/city.list.min.json";
 import { City } from "../types/city";
 
 export const API_KEY: any = process.env.REACT_APP_WEATHER_API_KEY;
