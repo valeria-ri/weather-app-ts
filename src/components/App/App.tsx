@@ -5,6 +5,7 @@ import { weatherFormat } from '../../utils/utils';
 import { FormattedWeatherData } from '../../types/weatherData';
 import Header from '../Header/Header';
 import WeatherBlock from '../WeatherBlock/WeatherBlock';
+import Footer from '../Footer/Footer';
 
 function App() {
   const [city, setCity] = useState(DEFAULT_CITY_ID);
@@ -28,6 +29,7 @@ function App() {
     <div className="App">
       <Header cityOnClick={requestCity} />
       <WeatherBlock weather={weather} />
+      <Footer />
     </div>
   );
 }
