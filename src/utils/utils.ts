@@ -9,8 +9,8 @@ export const weatherFormat = (data: WeatherData) => {
     tempMax: data.main.temp_max,
     humidity: data.main.humidity,
     pressure: data.main.pressure,
-    weather: data.weather.map((weather) => weather.description),
-    icon: data.weather.map((weather) => weather.icon),
+    weather: data.weather[0].description,
+    icon: data.weather[0].icon,
     windSpeed: data.wind.speed,
     windDeg: data.wind.deg,
   }

@@ -51,7 +51,8 @@ export interface FormattedWeatherData {
   tempMax: number;
   humidity: number;
   pressure: number;
-  weather: string[];
+  weather: string;
+  icon: string;
   windSpeed: number;
   windDeg: number;
 };
