@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent } from "react";
 import { City } from "../../types/city";
 import { TYPED_CITIES } from "../../utils/constants";
 import { CitySearchProps } from "./types";
@@ -6,9 +6,9 @@ import FilteredCities from "../FilteredCities/FilteredCities";
 import "./CitySearch.css";
 
 function CitySearch({ cityOnClick }: CitySearchProps) {
-  const [query, setQuery] = useState<string>("");
-  const [filteredCities, setFilteredCities] = useState<City[]>([]);
-  const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
+  const [query, setQuery] = React.useState<string>("");
+  const [filteredCities, setFilteredCities] = React.useState<City[]>([]);
+  const [isInputFocused, setIsInputFocused] = React.useState<boolean>(false);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;

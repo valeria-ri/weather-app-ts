@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import { API_KEY, DEFAULT_CITY_ID, MAIN_URL } from "../../utils/constants";
 import { weatherFormat } from "../../utils/utils";
 import { FormattedWeatherData } from "../../types/weatherData";
@@ -8,12 +8,12 @@ import Main from "../Main/Main";
 import "./App.css";
 
 function App() {
-  const [city, setCity] = useState(DEFAULT_CITY_ID);
-  const [weather, setWeather] = useState<FormattedWeatherData | null>(null);
+  const [city, setCity] = React.useState(DEFAULT_CITY_ID);
+  const [weather, setWeather] = React.useState<FormattedWeatherData | null>(null);
 
   const weatherApiUrl = `${MAIN_URL}weather?id=${city}&appid=${API_KEY}&units=metric&lang=en`;
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetch(weatherApiUrl)
       .then((res) => res.json())
       .then((data) => {
