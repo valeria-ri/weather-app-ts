@@ -4,7 +4,6 @@ function WeatherBlock({ weather }: WeatherBlockProps) {
   const weatherIconSrc: string = `https://openweathermap.org/img/wn/${weather?.icon}@2x.png`;
 
   return (
-    <main>
       <section>
         {!weather ? ( 
           <div>
@@ -49,7 +48,6 @@ function WeatherBlock({ weather }: WeatherBlockProps) {
           </>
         )}
       </section>
-    </main>
   );
 }
 

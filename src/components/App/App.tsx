@@ -4,8 +4,8 @@ import { API_KEY, DEFAULT_CITY_ID, MAIN_URL } from '../../utils/constants';
 import { weatherFormat } from '../../utils/utils';
 import { FormattedWeatherData } from '../../types/weatherData';
 import Header from '../Header/Header';
-import WeatherBlock from '../WeatherBlock/WeatherBlock';
 import Footer from '../Footer/Footer';
+import Main from '../Main/Main';
 
 function App() {
   const [city, setCity] = useState(DEFAULT_CITY_ID);
@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <Header cityOnClick={requestCity} />
-      <WeatherBlock weather={weather} />
+      <Main weather={weather} />
       <Footer />
     </div>
   );
