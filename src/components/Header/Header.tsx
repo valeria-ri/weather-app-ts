@@ -3,8 +3,8 @@ import { HeaderProps } from "./types";
 
 function Header({ cityOnClick }: HeaderProps) {
   return (
-    <header>
-      <p>Weather Now</p>
+    <header className="header">
+      <p className="header__title">Weather<span>Now</span></p>
       <CitySearch cityOnClick={cityOnClick} />
     </header>
   )

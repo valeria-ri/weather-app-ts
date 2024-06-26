@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer>
-      <p>Powered by <a href="https://openweathermap.org/">OpenWeather</a></p>
+    <footer className="footer">
+      <p className="footer__license">Powered by <a href="https://openweathermap.org/">OpenWeather</a></p>
     </footer>
   )
 }

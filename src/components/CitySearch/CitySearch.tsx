@@ -34,8 +34,9 @@ function CitySearch({ cityOnClick }: CitySearchProps) {
   const handleInputBlur = () => setIsInputFocused(false);
 
   return (
-    <div>
+    <div className="city-search">
       <input
+        className="city-search__input"
         placeholder="City..."
         type="text"
         name="city"
@@ -45,9 +46,9 @@ function CitySearch({ cityOnClick }: CitySearchProps) {
         onBlur={handleInputBlur}
       />
       {isInputFocused && query && (
-        <section>
+        <section className="city-search__result">
           {filteredCities.length === 0 ? (
-            <p>No results</p>
+            <p className="city-search__info">No results</p>
           ) : (
             <FilteredCities
               filteredCities={filteredCities}

@@ -5,11 +5,15 @@ function FilteredCities({
   handleSelectCity,
 }: FilteredCitiesProps) {
   return (
-    <ul>
+    <ul className="city-search__list">
       {filteredCities.map((city, index) => (
-        <li key={index} onClick={() => handleSelectCity(city.id)}>
-          <p>{city.name}</p>
-          <p>{city.country}</p>
+        <li
+          className="city-search__item"
+          key={index}
+          onClick={() => handleSelectCity(city.id)}
+        >
+          <p className="city-search__city">{city.name}</p>
+          <p className="city-search__country">{city.country}</p>
         </li>
       ))}
     </ul>
