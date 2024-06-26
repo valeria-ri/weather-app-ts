@@ -44,14 +44,20 @@ function CitySearch({ cityOnClick }: CitySearchProps) {
         onBlur={handleInputBlur}
       />
       {isInputFocused && query && (
-        <ul>
-          {filteredCities.map((city, index) => (
-            <li key={index} onClick={() => handleSelectCity(city.id)}>
-              <p>{city.name}</p>
-              <p>{city.country}</p>
-            </li>
-          ))}
-        </ul>
+        <section>
+          {filteredCities.length === 0 ? (
+            <p>No results</p>
+          ) : (
+            <ul>
+              {filteredCities.map((city, index) => (
+                <li key={index} onClick={() => handleSelectCity(city.id)}>
+                  <p>{city.name}</p>
+                  <p>{city.country}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
       )}
     </div>
   );
