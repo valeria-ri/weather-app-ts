@@ -1,5 +1,6 @@
 import CitySearch from "../CitySearch/CitySearch";
 import { HeaderProps } from "./types";
+import "./Header.css";
 
 function Header({ cityOnClick }: HeaderProps) {
   return (

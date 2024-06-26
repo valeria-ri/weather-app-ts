@@ -1,4 +1,5 @@
 import { FilteredCitiesProps } from "./types";
+import "./FilteredCities.css";
 
 function FilteredCities({
   filteredCities,

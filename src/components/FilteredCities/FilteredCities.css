@@ -1,0 +1,26 @@
+.city-search__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-search__item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.city-search__city, .city-search__country {
+  line-height: 1;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.city-search__city {
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

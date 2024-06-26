@@ -1,5 +1,6 @@
 import WeatherBlock from "../WeatherBlock/WeatherBlock";
 import { MainProps } from "./types";
+import "./Main.css";
 
 function Main({
   weather,

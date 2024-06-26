@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import { API_KEY, DEFAULT_CITY_ID, MAIN_URL } from '../../utils/constants';
-import { weatherFormat } from '../../utils/utils';
-import { FormattedWeatherData } from '../../types/weatherData';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import Main from '../Main/Main';
+import { useEffect, useState } from "react";
+import { API_KEY, DEFAULT_CITY_ID, MAIN_URL } from "../../utils/constants";
+import { weatherFormat } from "../../utils/utils";
+import { FormattedWeatherData } from "../../types/weatherData";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Main from "../Main/Main";
+import "./App.css";
 
 function App() {
   const [city, setCity] = useState(DEFAULT_CITY_ID);
@@ -15,8 +15,8 @@ function App() {
 
   useEffect(() => {
     fetch(weatherApiUrl)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         const formattedWeather = weatherFormat(data);
         setWeather(formattedWeather);
       })
@@ -27,9 +27,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header cityOnClick={requestCity} />
-      <Main weather={weather} />
-      <Footer />
+      <div className="page">
+        <Header cityOnClick={requestCity} />
+        <Main weather={weather} />
+        <Footer />
+      </div>
     </div>
   );
 }

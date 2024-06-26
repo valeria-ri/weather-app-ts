@@ -3,6 +3,7 @@ import { City } from "../../types/city";
 import { TYPED_CITIES } from "../../utils/constants";
 import { CitySearchProps } from "./types";
 import FilteredCities from "../FilteredCities/FilteredCities";
+import "./CitySearch.css";
 
 function CitySearch({ cityOnClick }: CitySearchProps) {
   const [query, setQuery] = useState<string>("");
@@ -24,6 +25,8 @@ function CitySearch({ cityOnClick }: CitySearchProps) {
   };
 
   const handleSelectCity = (cityId: number) => {
+    console.log('Привет');
+    
     cityOnClick(cityId);
     setQuery("");
     setFilteredCities([]);
@@ -37,7 +40,7 @@ function CitySearch({ cityOnClick }: CitySearchProps) {
     <div className="city-search">
       <input
         className="city-search__input"
-        placeholder="City..."
+        placeholder="Search city..."
         type="text"
         name="city"
         value={query || ""}
@@ -47,14 +50,16 @@ function CitySearch({ cityOnClick }: CitySearchProps) {
       />
       {isInputFocused && query && (
         <section className="city-search__result">
-          {filteredCities.length === 0 ? (
-            <p className="city-search__info">No results</p>
-          ) : (
-            <FilteredCities
-              filteredCities={filteredCities}
-              handleSelectCity={handleSelectCity}
-            />
-          )}
+          <div className="city-search__container">
+            {filteredCities.length === 0 ? (
+              <p className="city-search__info">No results</p>
+            ) : (
+              <FilteredCities
+                filteredCities={filteredCities}
+                handleSelectCity={handleSelectCity}
+              />
+            )}
+          </div>
         </section>
       )}
     </div>
