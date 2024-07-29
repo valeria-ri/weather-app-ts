@@ -25,8 +25,6 @@ function CitySearch({ cityOnClick }: CitySearchProps) {
   };
 
   const handleSelectCity = (cityId: number) => {
-    console.log('Привет');
-    
     cityOnClick(cityId);
     setQuery("");
     setFilteredCities([]);
